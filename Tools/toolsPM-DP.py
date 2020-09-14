@@ -127,6 +127,6 @@ def countDigits2(a):
 
 
 
-print(x)
+
 print(countDigits2(1234))
 print("TEST")
