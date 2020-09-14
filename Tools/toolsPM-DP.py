@@ -82,7 +82,7 @@ def sumDigitsA(a):
 
 	return total
 
-print(sumDigitsA(57))
+#print(sumDigitsA(57))
 
 
 
@@ -105,3 +105,28 @@ print(isEven(9))
 for i in range(0, 100, 1):
 	print(str(i)+" is "+str(isEven(i)))
 '''
+
+def countDigits2(a):
+	
+	a = str(a) #casting: changing type
+	total = 0
+
+	#Bread and Butter Algorithm
+	# a = "123"
+	#count i = 0
+	#chech i < 3
+	for i in range (0, len(a),1):
+		total = total + int(a[i])
+
+	return total
+
+		#change 
+		#check - TRUE REPEAT LOOP, FALSE EXIT LOOP
+
+
+
+
+
+print(x)
+print(countDigits2(1234))
+print("TEST")
