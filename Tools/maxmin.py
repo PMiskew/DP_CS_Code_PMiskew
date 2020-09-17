@@ -1,18 +1,28 @@
 l = [100,2,3]
+#abstraction: this is the process of hiding how something is done. 
 print(max(l))
 
+'''
+WATCH: 
+'''
 def findMaxConcern(a):
 
-    a.sort()
+    a.sort() #If I sort the list from lowest to highest
     return a[len(a) - 1]
 
 
 #CAUTION:   Don't call variable max it can cause
 #           problems since function is called max
 l = [100,2,3]
+w = l #give w and l the same refernce. 
+z = l.copy()
+z[0] = 1000
+print("Z =",z)
+
+print("L = ",l)
 m = findMaxConcern(l)
 print(m)
-print(l) #notice l is changed
+print(l)
 
 '''
 findMax takes list of integers and returns max value
