@@ -26,7 +26,7 @@ def scaleElementsA(a, b):
         #if b = [1,2,3,4], i will be 0,1,2,3
         b[i] = a * b[i] #b[i] is said "b at i"
 
-'''
+    
 print("START TEST CODE SCALE ELEMENTS A")
 l = [1,2,3,4]
 print(l)
@@ -35,7 +35,6 @@ print(l)
 
 
 print("**********************************")
-'''
 
 '''
 Write a function called scaleElementsB that takes an integer value
@@ -54,9 +53,8 @@ Return: int[]
 '''
 def scaleElementsB(a,b):
     print("Scale Elements B")
+    c = []
     
-    c = [] #Creates an empty list
-
     for i in range(0, len(b),1):
 
         c.append(b[i]*a) #append adds a new element to the list
@@ -75,5 +73,12 @@ print("**********************************")
 
 def addStringsSmallLarge(a, b):
     print("Add Strings Small Large")
+
+    result = a + b
+
+    if len(a) < len(b)
+        result = b + a
+    
+    return result
 
     
