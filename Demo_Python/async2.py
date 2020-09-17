@@ -76,7 +76,7 @@ def addStringsSmallLarge(a, b):
 
     result = a + b
 
-    if len(a) < len(b)
+    if len(a) > len(b):
         result = b + a
     
     return result
