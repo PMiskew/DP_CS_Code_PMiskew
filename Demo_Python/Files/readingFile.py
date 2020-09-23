@@ -10,7 +10,7 @@ import os
 file = open('data.txt','r')
 
 for line in file:
-    print(line.split())
+    print(line)
 
 
 

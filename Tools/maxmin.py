@@ -7,6 +7,8 @@ WATCH:
 '''
 def findMaxConcern(a):
 
+    #In the below a is called the IMPLIED OBJECT - If a list invokes
+    #a function as an implied object is changes the list.
     a.sort() #If I sort the list from lowest to highest
     return a[len(a) - 1]
 
@@ -16,21 +18,21 @@ def findMaxConcern(a):
 l = [100,2,3]
 w = l #give w and l the same refernce. 
 z = l.copy()
-z[0] = 1000
-print("Z =",z)
 
 print("L = ",l)
 m = findMaxConcern(l)
 print(m)
 print(l)
 
+print("W =",w)
 '''
-findMax takes list of integers and returns max value
-the list must contain at least 1 element and a must
-remain unchanged
+findMax takes list of integers and returns max value.
+The list a must contain at least 1 element and a must
+remain unchanged when the function is done. 
 '''
 def findMax(a):
 
+    #Big Idea: Set the correct value to an element in the list
     m = a[0]
     for i in range(0,len(a),1):
         m = max(m,a[i]) #max is OVERLOADED method

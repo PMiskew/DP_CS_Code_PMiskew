@@ -1,7 +1,12 @@
 '''
 Big Ideas:  
 
-Reference Types
+Reference Types: When you pass a reference type to a function the changes
+persist after the function is done.
+
+Post-Conditions: If there are reference types passed watch for the a post 
+condition stating the passed value cannot change.  This means you can't 
+change the parameter in the function.
 
 '''
 

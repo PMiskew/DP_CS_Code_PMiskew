@@ -13,7 +13,7 @@ arr.min(...arr); //short hand to find min
 */
 function findMaxConcern(a) {
     
-    a = a.sort(function(a,b) {
+    a.sort(function(a,b) {
         return a - b
     })
     console.log(a[a.length - 1])
