@@ -124,8 +124,14 @@ def countDigits2(a):
 		#check - TRUE REPEAT LOOP, FALSE EXIT LOOP
 
 
+'''
+Definition: takes two integers a and b and returns the sum
+parameters int a, int b
 
-
+preconditions: 
+'''
+def addNum(a,b):
+	return a + b
 
 
 print(countDigits2(1234))
