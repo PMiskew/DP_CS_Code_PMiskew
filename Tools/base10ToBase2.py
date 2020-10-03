@@ -1,81 +1,100 @@
-#See bottom for theory:
 
-def base10toBase2(n):
-
-	result = ""
-
-	while (n > 0):
-
-		result = str(n%2) + result
-		n = n // 2
-	
-
-	return result
-
-print(base10toBase2(45))
-
-'''
-Theory: To convert from Base 10 to any other base we 
-divide by the new base (in this case 2) and use the remainder
-and quotient to find the next step.  We stop when we reach 0
-
-62 = 
-
-62/2 = 31 R 0
-
-31/2 = 15 R 1
-
-15/2 = 7 R 1 
-
- 7/2 = 3 R 1
-
- 3/2 = 1 R 1 
-
- 1/2 = 0 R 1
-
- DONE
-
- Read bottom up 
-
- 62 = 111110
-
-	Makes sesne since 62 is even and therefore the right
-	most digit should be 0. 
- 
-
-45 = 101101
-
-45/2 = 24 R 1
-
-22/2 = 11 R 0
-
-11/2 = 5  R 1
-
- 5/2 = 2  R 1
-
- 2/2 = 1  R 0
-
- 1/2 = 0 R 1
-
- DONE
-
- Read bottom up - 45 = 101101
-'''
-
-#Question: How would I generalize this to base B
-
-
-def base10toBaseB(n,b):
+def base10ToBase2(n):
 
 	result = ""
 
-	while (n > 0):
+	while n > 0:
 
-		result = str(n%3) + result
-		n = n // b
-	
+		result = str(n % 2) + result
+		n = n//2
 
 	return result
 
-print(base10toBaseB(11,3))
+print(base10ToBase2(53))
+print(base10ToBase2(62))
+print(base10ToBase2(45))
+
+
+'''
+53 = 110101
+
+1   1 --> 1 - 1 = 0
+2   0 
+4   1 --> 5 - 4 = 1
+8   0
+16  1 --> 21 - 16 = 5
+32  1 --> 53 - 32 = 21
+
+53 / 2 = 26 R 1
+
+26 / 2 = 13 R 0
+
+13 / 2 =  6 R 1
+
+ 6 / 2 =  3 R 0
+
+ 3 / 2 =  1 R 1 
+
+ 1 / 2 =  0 R 1
+
+53 = 110101
+
+
+Base 10 To Base 3
+
+With base 3 we have three valid digits 0,1,2
+
+53 = 
+
+53 / 3 = 17 R 2
+
+17 / 3 = 5 R 2
+
+ 5 / 3 = 1 R 2
+
+ 1 / 3 = 0 R 1
+
+53 = 1222
+
+341 = 3 * 100 + 4 * 10 + 1 * 1
+    = 3 * 10^2 + 4*10^1 + 1*10^0
+
+
+53 = 1 * 3^3 + 2*3^2 + 2*3^1 + 2*3^0
+   = 1 * 27 + 2 * 9 + 2 * 3 + 2 * 1
+   = 27 + 18 + 6 + 2
+   = 53
+'''
+
+def base10ToBaseB(n, b):
+
+	result = ""
+
+	while n > 0:
+
+		result = str(n % b) + result
+		n = n//b
+
+	return result
+
+
+print(base10ToBaseB(53,3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
