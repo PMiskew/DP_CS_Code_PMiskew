@@ -1,4 +1,56 @@
 '''
+Simplier Approach:
+
+Choice of data structure really impacts programming approach.  With the
+below approach we used an indexing approach.  If we setup a dictonary 
+that uses a key:value pair we can signficantly streamline the algorithm
+
+Second change: Insteand of using a mathematical approach, which still had
+some issues we used a counted loop to add 0's to the front of s until it
+the length is divisible by 4
+'''
+
+def base2ToHexB(s):
+
+	result = ""
+
+	DIC = { "0000":"0",
+			"0001":"1",
+			"0010":"2",
+			"0011":"3",
+			"0100":"4",
+			"0101":"5",
+			"0110":"6",
+			"0111":"7",
+			"1000":"8",
+			"1001":"9",
+			"1010":"A",
+			"1011":"B",
+			"1100":"C",
+			"1101":"D",
+			"1110":"E",
+			"1111":"F"}
+
+	while (len(s)%4 != 0):
+		s = "0" + s
+	
+
+
+	for i in range(0, len(s),4):
+		v = s[i: i + 4]
+		result = result + DIC[v]
+
+	return result
+
+BIN = [ "0000","0001","0010","0011","0100","0101","0110","0111","1000","1001","1010","1011","1100","1101","1110","1111"]
+#Simple Test Case
+for i in range (0, len(BIN),1):
+	print(base2ToHexB(BIN[i]))
+
+print(base2ToHexB("1011110101")) #2 F 5
+print(base2ToHexB("1110111110110")) #1 D F 6
+#**************************************************
+'''
 Description:  This function takes a string, representing a binary value.
 If s is invalid then the function returns "-1"
 
@@ -9,7 +61,7 @@ precoditions: -
 postconditions: -
 
 '''
-def base2ToHex(s):
+def base2ToHexA(s):
 
 
 	#Declaring a list of strings called HEX and initalizing the elements to all 
@@ -40,7 +92,7 @@ def base2ToHex(s):
 	s = "0000" + s
 
 	#Counted Loop: Looping through s and incrementing by 4
-	'''
+
 	10111111
 
 	i = 0 [0: 0 + 4] = [0:4] --> "1011"
@@ -70,12 +122,13 @@ def base2ToHex(s):
 #TESTING:
 BIN = [ "0000","0001","0010","0011","0100","0101","0110","0111","1000","1001","1010","1011","1100","1101","1110","1111"]
 
+'''
 #print(base2ToHex("0010"))
 #Simple Test Case
 for i in range (0, len(BIN),1):
-	print(base2ToHex(BIN[i]))
+	print(base2ToHexA(BIN[i]))
 
-print(base2ToHex("1011110101")) #2 F 5
-print(base2ToHex("1110111110110")) #1 D F 6
-
+print(base2ToHexA("1011110101")) #2 F 5
+print(base2ToHexA("1110111110110")) #1 D F 6
+'''
 
