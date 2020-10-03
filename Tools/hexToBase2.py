@@ -1,5 +1,39 @@
 
 '''
+Simplier Approach: Dictionaries
+'''
+
+def hexToBase2_B(s):
+	result = ""
+
+	DIC = { "0":"0000",
+			"1":"0001",
+			"2":"0010",
+			"3":"0011",
+			"4":"0100",
+			"5":"0101",
+			"6":"0110",
+			"7":"0111",
+			"8":"1000",
+			"9":"1001",
+			"A":"1010",
+			"B":"1011",
+			"C":"1100",
+			"D":"1101",
+			"E":"1110",
+			"F":"1111"}
+
+	
+	for i in range(0, len(s), 1):
+		result = result + DIC[s[i]]
+
+	return result
+
+
+print(hexToBase2_B("0"))
+print(hexToBase2_B("A12"))
+print(hexToBase2_B("F"))
+'''
   S = passed string parameter only containing hex characters
   HEX = ["0","1","2", . . .,"E",F"]
   BIN = ["0000","0001","0010",....,"1110","1111"]	
@@ -50,25 +84,25 @@ def checkDigits(s):
 
 	org = len(s)
 
-	s = s.reaplaceAll("0","")
-	s = s.reaplaceAll("1","")
-	s = s.reaplaceAll("2","")
-	s = s.reaplaceAll("3","")
-	s = s.reaplaceAll("4","")
-	s = s.reaplaceAll("5","")
-	s = s.reaplaceAll("6","")
-	s = s.reaplaceAll("7","")
-	s = s.reaplaceAll("8","")
-	s = s.reaplaceAll("9","")
-	s = s.reaplaceAll("A","")
-	s = s.reaplaceAll("B","")
-	s = s.reaplaceAll("C","")
-	s = s.reaplaceAll("D","")
-	s = s.reaplaceAll("E","")
-	s = s.reaplaceAll("F","")
-
+	s = s.replace("0","")
+	s = s.replace("1","")
+	s = s.replace("2","")
+	s = s.replace("3","")
+	s = s.replace("4","")
+	s = s.replace("5","")
+	s = s.replace("6","")
+	s = s.replace("7","")
+	s = s.replace("8","")
+	s = s.replace("9","")
+	s = s.replace("A","")
+	s = s.replace("B","")
+	s = s.replace("C","")
+	s = s.replace("D","")
+	s = s.replace("E","")
+	s = s.replace("F","")
+	
 	#Returns false
-	return len(s) == org
+	return len(s) == 0
 
 
 
