@@ -20,39 +20,51 @@ if the value is -1
 '''
 def findMeters(val, unit):
 
-	if unit < 0:
+	if val < 0:
 		return -1
-	if units == "mm":
+	if unit == "mm":
 		return val/1000
-	elif units == "cm":
+	elif unit == "cm":
 		return val/100
-	elif units == "dm":
+	elif unit == "dm":
 		return val/10
-	elif units == "m":
+	elif unit == "m":
 		return val/1
 
-
 	return -1
+print(findMeters(-99,"nm"))
 
 
-def convertUnits(val,u1,u2):
+'''
+This method converts the passed value from u1 to u2 where
+val is a float, u1 and u2 are string values. 
+'''
+def convertUnits(val,u1,u2,*args):
 
+	factor = ["nm","mm","cm","dm","m"]
+	
+	#.   10     10     10
+	# mm --> cm --> dm --> m
+	#
+	#Find the index of u1 and u2
+	try:
+		v1 = factor.index(u1)
+		v2 = factor.index(u2)
+	except:
+		return -1
 
-	factor = ["mm","cm","dm","m"]
-	v1 = factor.index(u1)
-	v2 = factor.index(u2)
-
+	print(v1)
+	print(v2)
+	#Finds the differnece of U1 and U2
 	conv = v2 - v1
 
-	if conv < 0:
-		return abs(val*(conv*10))
-
-	return val/(conv*10)
+	return val/(10**conv)
 	
 
-
-print(convertUnits(100,"mm","cm"))
-
+try: 
+	print(convertUnits(100,"dm","mm","dc"))
+except:
+	
 
 
 
