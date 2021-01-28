@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Fake Login
+	</title>
+
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            
+</head>
+<body>
+
+	<nav>
+		<div class="green lighten-2 nav-wrapper">
+			<a href="#" class="brand-logo center">Home (Auth Example)</a>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a href="#login_modal" id = "login_nav" class = "modal-trigger">Login</a></li>
+					<li><a href="index.html" id = "logout_nav" style = "display:none">Logout</a></li>
+					<li><a href="elements.html" id = "the_elements_nav" style = "display:none">The Elements</a></li>
+					<li><a href="#" id = "learn_more_nav" style = "display:none">Learn More</a></li>
+				</ul>
+		</div>
+	</nav>
+
+	<!-- Modal Structure -->
+	<div id="login_modal" class="modal">
+		<div class="modal-content">
+			<form id="login-form" autocomplete = "off">
+				<div class="input-field">
+					<input type="email" id="user_name" autocomplete="" required />
+					<label for="user_name">User Name</label>
+				</div>
+				<div class="input-field">
+					<input type="password" id="user_password" autocomplete="" required />
+					<label for="user_password">Password</label>
+				</div>
+				
+				<button class="btn yellow darken-2 z-depth-0">Sign Up</button>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Create New User</a>
+		</div>
+	</div>
+
+
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+
+
+    	document.addEventListener('DOMContentLoaded', function() {
+    		options = []
+			var elems = document.querySelectorAll('.modal');
+			var instances = M.Modal.init(elems, options);
+		});
+
+    </script>
+
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
+
+	<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+			apiKey: "AIzaSyBOXY1CCF6M2Vmwx0pbhgdWVhWgBHgfPk8",
+			authDomain: "clubdemo-9f36f.firebaseapp.com",
+			databaseURL: "https://clubdemo-9f36f-default-rtdb.firebaseio.com",
+			projectId: "clubdemo-9f36f",
+			storageBucket: "clubdemo-9f36f.appspot.com",
+			messagingSenderId: "28246560576",
+			appId: "1:28246560576:web:91bdf81de086966fbe74a5"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	auth = firebase.auth()
+
+	</script>
+
+
+
+
+
+
+
+
+
+    <script src = "auth.js"></script>
+
+
+</body>
+</html>

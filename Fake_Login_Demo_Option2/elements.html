@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            
+</head>
+<body>
+
+	<nav>
+		<div class="green lighten-2 nav-wrapper">
+			<a href="#" class="brand-logo center">The Elements (AUTH EXAMPLE)</a>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a href="index.html" id = "logout_nav">Logout</a></li>
+					<li><a href="#" id = "the_elements_nav">The Elements</a></li>
+					<li><a href="learnmore.html" id = "learn_more_nav">Learn More</a></li>
+				</ul>
+		</div>
+	</nav>
+
+	<div class= "container">
+		<h1>ELEMENTS</h1>
+		<p>When this page loads we will access our database that holds the elements and display cards</p>
+		<p id = "user"></p>
+	</div>
+
+	 <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+				apiKey: "AIzaSyBOXY1CCF6M2Vmwx0pbhgdWVhWgBHgfPk8",
+				authDomain: "clubdemo-9f36f.firebaseapp.com",
+				databaseURL: "https://clubdemo-9f36f-default-rtdb.firebaseio.com",
+				projectId: "clubdemo-9f36f",
+				storageBucket: "clubdemo-9f36f.appspot.com",
+				messagingSenderId: "28246560576",
+				appId: "1:28246560576:web:91bdf81de086966fbe74a5"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		auth = firebase.auth()
+
+	</script>
+	<script src = "auth.js"></script>
+
+	<script>
+
+	document.addEventListener('DOMContentLoaded', function() {
+    
+		auth.onAuthStateChanged(user => {
+			console.log("***",user)
+    	});
+    });
+
+
+
+	</script>
+
+
+
+</body>
+</html>

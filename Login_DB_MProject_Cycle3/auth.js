@@ -33,3 +33,15 @@ login_form.addEventListener('submit', (e) => {
 	M.Modal.getInstance(modal).close();
 
 });
+
+
+//add an event listener to logout_nav
+//In teh function swap the display of the various element
+logout_nav.addEventListener('click', (e) => {
+	logout_nav.style.display = "none"
+	elements_nav.style.display = "none"
+	elements_game_nav.style.display = "none"
+	login_nav.style.display = "block"
+
+});
+
