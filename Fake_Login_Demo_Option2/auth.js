@@ -8,7 +8,7 @@
 //If you authenticate using firebase your browser gets "authenticated" this means
 //when a page is loaded you run a function that checks to see if the person is valid
 //and if they are it updates the page. 
-console.log("TEST")
+
 
 const login_form = document.querySelector("#login-form")
 const login_nav = document.getElementById("login_nav")
@@ -17,6 +17,9 @@ const the_elements_nav = document.getElementById("the_elements_nav")
 const learn_more_nav = document.getElementById("learn_more_nav")
 
 var cUser = null
+
+
+
 
 try {
 	
@@ -75,7 +78,7 @@ logout_nav.addEventListener('click',(e) => {
 	learn_more_nav.style.display = "none"
 	
 	firebase.auth().signOut()
-	window.open("index.html","_self");
+	window.location.assign('index.html');
 
 });
 

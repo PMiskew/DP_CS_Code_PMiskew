@@ -5,6 +5,9 @@ auth.onAuthStateChanged(user => {
 	console.log("LEARN_MORE",user)
 	//Anything user related that happens when page is loaded needed here
 	cUser
+	if (user == null && window.location.href != "http://localhost:8000/index.html") {
+		window.open("http://localhost:8000/index.html","_self")
+	}
 
 
 
