@@ -25,6 +25,8 @@
 	<div class= "container">
 		<h1>ELEMENTS</h1>
 		<p>When this page loads we will access our database that holds the elements and display cards</p>
+
+		<a class="waves-effect waves-light btn" id = "run_Button">RUN</a>
 		<p id = "user"></p>
 	</div>
 
@@ -57,20 +59,7 @@
 
 	</script>
 	<script src = "auth.js"></script>
-
-	<script>
-
-	document.addEventListener('DOMContentLoaded', function() {
-    
-		auth.onAuthStateChanged(user => {
-			console.log("USER: ",user)
-    	});
-    });
-
-
-
-	</script>
-
+	<script src = "elements.js"></script>
 
 
 </body>

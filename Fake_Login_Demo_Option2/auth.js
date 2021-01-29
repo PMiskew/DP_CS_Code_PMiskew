@@ -16,6 +16,8 @@ const logout_nav = document.getElementById("logout_nav")
 const the_elements_nav = document.getElementById("the_elements_nav")
 const learn_more_nav = document.getElementById("learn_more_nav")
 
+var cUser = null
+
 try {
 	
 	login_form.addEventListener('submit',(e) => {
@@ -82,7 +84,7 @@ logout_nav.addEventListener('click',(e) => {
 //****************************************************
 auth.onAuthStateChanged(user => {
 	console.log("^^^^^^",user)
-
+	cUser = user
 
 	if (user === null) {
 
