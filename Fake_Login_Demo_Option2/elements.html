@@ -13,7 +13,9 @@
 		<div class="green lighten-2 nav-wrapper">
 			<a href="#" class="brand-logo center">The Elements (AUTH EXAMPLE)</a>
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<li><a href="index.html" id = "logout_nav">Logout</a></li>
+					<li><a href="#login_modal" id = "login_nav" style = "display: none" class = "modal-trigger">Login</a></li>
+					
+					<li><a href="#" id = "logout_nav">Logout</a></li>
 					<li><a href="#" id = "the_elements_nav">The Elements</a></li>
 					<li><a href="learnmore.html" id = "learn_more_nav">Learn More</a></li>
 				</ul>
@@ -61,7 +63,7 @@
 	document.addEventListener('DOMContentLoaded', function() {
     
 		auth.onAuthStateChanged(user => {
-			console.log("***",user)
+			console.log("USER: ",user)
     	});
     });
 
