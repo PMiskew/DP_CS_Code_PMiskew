@@ -43,7 +43,10 @@
 		<div class="modal-footer">
 			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Create New User</a>
 		</div>
+
 	</div>
+
+	<a class="waves-effect waves-light btn" id = "cuser_BTN">Current User</a>
 
 
 
@@ -60,6 +63,12 @@
 			var instances = M.Modal.init(elems, options);
 		});
 
+    	const cuser_BTN = document.getElementById("cuser_BTN")
+
+    	cuser_BTN.addEventListener("click",(e) => {
+    		console.log("CURRENT USER:",cuser)
+
+    	});
     </script>
 
 
