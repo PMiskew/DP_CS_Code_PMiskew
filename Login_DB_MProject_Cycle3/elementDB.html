@@ -102,6 +102,25 @@
     		 
     		var data = ""
 
+
+			dataDB =  database.ref('/elements/').on('value',(snapshot) => {
+				
+				data =snapshot.val()				
+
+
+				dataSTR = ""
+				for (key in data) {
+
+					dataSTR = dataSTR + createCard(data[key])
+				
+				}
+				
+				elementDisplay.innerHTML = dataSTR
+
+
+			});
+
+			/*
 			dataDB =  database.ref('/elements/').once('value').then((snapshot) => {
 				
 				data =snapshot.val()				
@@ -117,8 +136,8 @@
 				elementDisplay.innerHTML = dataSTR
 
 
-		});
-
+			});
+			*/
 
 
 

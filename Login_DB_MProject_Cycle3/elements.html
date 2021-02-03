@@ -62,9 +62,81 @@
 
 
 
+
+    	var data = 
+			{	
+				"elements": [
+					{ 
+						"name": "Hydogen",
+						"symbol": "H", 
+						"number": 1, 
+						"atomicMass": 1.007947, 
+						"img": "LINK",
+						"fact": "Hydrogen is the most abundent element in the universe"
+					},
+					{
+						"name": "Helium",
+						"symbol": "He",
+						"number": 2, 
+						"atomicMass": 4.002602, 
+						"img": "LINK",
+						"fact": "Helium is a colourless, tasteless and odorless gas"
+
+					},
+					{
+						"name": "Lithium",
+						"symbol": "Li",
+						"number": 3, 
+						"atomicMass": 6.941, 
+						"img": "LINK",
+						"fact": "Used to treat major depressive disorders."
+
+					},
+					{
+						"name": "Beryllium",
+						"symbol": "Be",
+						"number": 4, 
+						"atomicMass": 9.012182, 
+						"img": "LINK",
+						"fact": "beryllium is used to make cell phones, missiles and aircrafts.."
+
+					}
+				]
+			}
+
+
+		/*
 		dataDB =  database.ref('/elements/').once('value').then((snapshot) => {
-			var result =snapshot.val()
-			console.log(result)
+			
+			data =snapshot.val()
+			console.log(data)
+
+			dataSTR = ""
+			for (i = 0; i < data.length; i = i + 1) {
+
+				dataSTR = dataSTR + createCard(data[i])
+				
+			}
+			elementDisplay.innerHTML = dataSTR
+
+			
+		});
+		*/
+
+		dataDB =  database.ref('/elements/').on('value',(snapshot) => {
+			
+			data =snapshot.val()
+			console.log(data)
+
+			dataSTR = ""
+			for (i = 0; i < data.length; i = i + 1) {
+
+				dataSTR = dataSTR + createCard(data[i])
+				
+			}
+			elementDisplay.innerHTML = dataSTR
+
+			
 		});
 
 
@@ -109,58 +181,7 @@
 				return card
 			}    	
 
-    	var data = 
-			{	
-				"elements": [
-					{ 
-						"name": "Hydogen",
-						"symbol": "H", 
-						"number": 1, 
-						"atomicMass": 1.007947, 
-						"img": "LINK",
-						"fact": "Hydrogen is the most abundent element in the universe"
-					},
-					{
-						"name": "Helium",
-						"symbol": "He",
-						"number": 2, 
-						"atomicMass": 4.002602, 
-						"img": "LINK",
-						"fact": "Helium is a colourless, tasteless and odorless gas"
-
-					},
-					{
-						"name": "Lithium",
-						"symbol": "Li",
-						"number": 3, 
-						"atomicMass": 6.941, 
-						"img": "LINK",
-						"fact": "Used to treat major depressive disorders."
-
-					},
-					{
-						"name": "Beryllium",
-						"symbol": "Be",
-						"number": 4, 
-						"atomicMass": 9.012182, 
-						"img": "LINK",
-						"fact": "beryllium is used to make cell phones, missiles and aircrafts.."
-
-					}
-				]
-			}
-
-			//demoIdea(data)
-
-			//STRING CONSTURCTION
-			dataSTR = ""
-			for (i = 0; i < data["elements"].length; i = i + 1) {
-
-				dataSTR = dataSTR + createCard(data["elements"][i])
-				
-			}
-			elementDisplay.innerHTML = dataSTR
-
+			
 
 
 

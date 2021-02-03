@@ -37,8 +37,23 @@
 		};
 		// Initialize Firebase
 		firebase.initializeApp(firebaseConfig);
+
 		database = firebase.database()
 
+	var users = [
+		{
+			"name": "user1",
+			"pword": "UCC123",
+			"description": "I am a new student at school"
+		},
+		{
+			"name": "user2",
+			"pword": "UCC321",
+			"description": "I am a new student as well"
+		}
+
+
+		]
 
 	var elements =  [
 					{ 
@@ -122,57 +137,54 @@
 
 					},
 					{
-						"name": "dfahdfhas",
-						"symbol": "Be",
-						"number": 4, 
-						"atomicMass": 9.012182, 
+						"name": "Neon",
+						"symbol": "N",
+						"number": 10, 
+						"atomicMass": 20.180, 
 						"img": "LINK",
-						"fact": "beryllium is used to make cell phones, missiles and aircrafts.."
-
-					},
-					{
-						"name": "PPPPPPPfhas",
-						"symbol": "Be",
-						"number": 4, 
-						"atomicMass": 9.012182, 
-						"img": "LINK",
-						"fact": "beryllium is used to make cell phones, missiles and aircrafts.."
-
-					},
-					{
-						"name": "QQQQPPPPPfhas",
-						"symbol": "Be",
-						"number": 4, 
-						"atomicMass": 9.012182, 
-						"img": "LINK",
-						"fact": "beryllium is used to make cell phones, missiles and aircrafts.."
+						"fact": "Neon is used to make Neon signs.Neon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signs"
 
 					}
 				]
 			
-
+	var name = ""
 	//This generates a Promise - Process in web-development which is generated when a task is
 	//being done that takes time
 	x = database.ref().set({
    		elements
-  	})
-
-	firebase.database().ref().once('value').then((snapshot) => {
-  			console.log(snapshot.val())
-
+   		//does something that accesses and updates name from the database
+   		
+  	}).then((result) => {
+  		console.log("************"+result)
+  		name = "Andrew"
+  		//does 
   	});
+
+ 	console.log(name)
+	//once will pull the data once and only once!
+	//on pulls the data when the page is loaded and then listens for changes in the database
+	y = database.ref().once('value').then((snapshot) => {
+
+  			console.log(snapshot.val())
+  			
+  	});
+
+
+  	
 
   	console.log(x)
 
   	x.then((val) => {
   		console.log("Database updated!")
-
+  		console.log("*****",name)
   		
   		firebase.database().ref().once('value').then((snapshot) => {
   			console.log(snapshot.val())
 
   		});
   	});
+
+  	console.log("!!!!!!!!!!!!")
 
 </script>
 
