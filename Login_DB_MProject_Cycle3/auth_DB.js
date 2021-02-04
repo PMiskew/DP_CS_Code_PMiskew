@@ -8,31 +8,13 @@ const elements_nav = document.getElementById("elements_nav")
 const elements_game_nav = document.getElementById("elements_game_nav")
 
 //Parallel Array Strcutures
-users = ["user1","user2","user3"]
-pwords = ["pword1","pword2","pword3"]
-cuser = ""
+users = []
 
-
-//Step 1 (not on site) 
-//Set up your database with a users collection - in that collection easy approach is to have each
-//object have a user and pword key. 
-
-//Step 2 (on load of site)
-//Pull from the database the user information and store in an object called userData
-//This can be done using the once function.
-//
-//You can then run alogirhtm when the user clicks login based on the data pull that is because
-//the time it takes the user to click login, type in details and hit submit you know the pull is done
-
-//Step 3:
-//Your just authenticate based on the list
-//
-
-//Step 4 (Create new User):
-//
-//If you create a new user you then add it to the list in your file. 
-//Then you push the entire list back to the database
-
+database.ref('/usersInfo/').once('value').then((snapshot) => {
+			users = snapshot.val()
+			console.log(users)
+			
+});
 
 
 
@@ -48,18 +30,12 @@ login_form.addEventListener('submit', (e) => {
 	console.log(pword)
 
 
-	//Option 1: Verify against a predefined list - for learning
-	//Cross check credentials against a list in web page
-
-	//Task: 
-	//Write a loop that checks that uname and pword match.  If they match
-	//"login" the user by changing the nav bar display. 
 
 	for (i = 0; i < users.length; i = i + 1) {
 
-		if (users[i] == uname) {
+		if (users[i]["userName"] == uname) {
 
-			if (pwords[i] == pword) {
+			if (users[i]["password"] == pword) {
 				logout_nav.style.display = "block"
 				elements_nav.style.display = "block"
 				elements_game_nav.style.display = "block"
@@ -89,4 +65,24 @@ logout_nav.addEventListener('click', (e) => {
 	login_nav.style.display = "block"
 
 });
+
+
+function newUser() {
+
+  var postData = {
+    userName: "new user",
+    password: "password"
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('usersInfo').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['usersInfo/' + newPostKey] = postData;
+
+  return firebase.database().ref().update(updates);
+}
+
+newUser()
 

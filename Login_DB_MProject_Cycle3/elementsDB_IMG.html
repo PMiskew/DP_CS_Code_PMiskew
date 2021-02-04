@@ -5,6 +5,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
@@ -70,11 +72,11 @@
 
 	const imagetest = document.getElementById("imagetest") //gets access to the element on the page
 
+/*
 	x = storageRef.child('images/2_Heliums.jpg').getDownloadURL()
 	console.log(x)
 
-	var test = ""
-
+	
 	x.then(function(url) {
 
 
@@ -89,6 +91,7 @@
 		console.log(error)
 	});
 
+*/
 	//var test = 'firebase_url';
 
 	//document.querySelector('img').src = test;
@@ -199,10 +202,20 @@
 
 		function createCard(elemOBJ) {
 
-			//	console.log(elemOBJ)
+
+			x = storageRef.child('images/2_Helium.jpg').getDownloadURL()
+	
+	
+			x.then(function(url) {			
+		
 				const card = ` 	
 					<div class="col s12 m6 l4">
 						<div class="card small blue-grey darken-1">
+							<div class="card-image">
+								<img src="images/sample-1.jpg">
+								<span class="card-title">Card Title</span>
+								<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+							</div>
 							<div class="card-content white-text">
 			 					<span class="card-title">${elemOBJ["name"]}: ${elemOBJ["symbol"]}</span>
 			  					<p>${elemOBJ["fact"]}</p>
@@ -216,7 +229,13 @@
 				`
 
 				return card
-			}    	
+
+			}).catch(function(error) {
+				console.log(error)
+			});
+
+         
+	}    	
 
 			
 
