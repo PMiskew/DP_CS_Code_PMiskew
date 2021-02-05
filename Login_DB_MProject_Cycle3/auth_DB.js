@@ -10,7 +10,7 @@ const elements_game_nav = document.getElementById("elements_game_nav")
 //Parallel Array Strcutures
 users = []
 
-database.ref('/usersInfo/').once('value').then((snapshot) => {
+database.ref('/users/').once('value').then((snapshot) => {
 			users = snapshot.val()
 			console.log(users)
 			
@@ -75,11 +75,11 @@ function newUser() {
   };
 
   // Get a key for a new Post.
-  var newPostKey = firebase.database().ref().child('usersInfo').push().key;
+  var newPostKey = firebase.database().ref().child('users').push().key;
 
   // Write the new post's data simultaneously in the posts list and the user's post list.
   var updates = {};
-  updates['usersInfo/' + newPostKey] = postData;
+  updates['users/' + newPostKey] = postData;
 
   return firebase.database().ref().update(updates);
 }

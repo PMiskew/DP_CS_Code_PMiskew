@@ -61,7 +61,7 @@
 						"symbol": "H", 
 						"number": 1, 
 						"atomicMass": 1.007947, 
-						"img": "LINK",
+						"img": "1_Hydrogen.jpg",
 						"fact": "Hydrogen is the most abundent element in the universe"
 					},
 					{
@@ -78,7 +78,7 @@
 						"symbol": "Li",
 						"number": 3, 
 						"atomicMass": 6.941, 
-						"img": "LINK",
+						"img": "3_Lithium.jpg",
 						"fact": "Used to treat major depressive disorders."
 
 					},
@@ -87,7 +87,7 @@
 						"symbol": "Be",
 						"number": 4, 
 						"atomicMass": 9.012182, 
-						"img": "LINK",
+						"img": "4_Beryllium.jpg",
 						"fact": "beryllium is used to make cell phones, missiles and aircrafts.."
 
 					},
@@ -96,7 +96,7 @@
 						"symbol": "B",
 						"number": 5, 
 						"atomicMass": 10.81, 
-						"img": "LINK",
+						"img": "5_Boron.jpg",
 						"fact": "FACT.."
 
 					},
@@ -105,7 +105,7 @@
 						"symbol": "C",
 						"number": 6, 
 						"atomicMass": 12.01, 
-						"img": "LINK",
+						"img": "6_Carbon.jpg",
 						"fact": "Fact. . ."
 
 					},
@@ -114,7 +114,7 @@
 						"symbol": "N",
 						"number": 7, 
 						"atomicMass": 14.07, 
-						"img": "LINK",
+						"img": "7_Nitrogen.jpg",
 						"fact": "Nitrogen makes up most of the atmosphere"
 
 					},
@@ -123,7 +123,7 @@
 						"symbol": "O",
 						"number": 8, 
 						"atomicMass": 9.012182, 
-						"img": "LINK",
+						"img": "8_Oxygen.jpg",
 						"fact": "Oxygen supports combustion"
 
 					},
@@ -132,7 +132,7 @@
 						"symbol": "F",
 						"number": 9, 
 						"atomicMass": 18.998, 
-						"img": "LINK",
+						"img": "9_Fluorine.jpg",
 						"fact": "Fluorine is the most reactive and the most electronegative of all the elements"
 
 					},
@@ -141,14 +141,12 @@
 						"symbol": "N",
 						"number": 10, 
 						"atomicMass": 20.180, 
-						"img": "LINK",
-						"fact": "Neon is used to make Neon signs.Neon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signsNeon is used to make Neon signs"
+						"img": "10_Neon.jpg",
+						"fact": "Neon is about 2/3rd as dense as air."
 
 					
 					},
-					{
-						
-					}
+					
 				]
 			
 	var name = ""
@@ -168,6 +166,7 @@
 	//once will pull the data once and only once!
 	//on pulls the data when the page is loaded and then listens for changes in the database
 	y = database.ref().once('value').then((snapshot) => {
+
 
   			console.log(snapshot.val())
   			
