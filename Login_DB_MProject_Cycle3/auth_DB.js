@@ -6,16 +6,54 @@ const login_nav = document.getElementById("login_nav")
 const logout_nav = document.getElementById("logout_nav")
 const elements_nav = document.getElementById("elements_nav")
 const elements_game_nav = document.getElementById("elements_game_nav")
-
+const newUserBTN = document.querySelector("#newUserBTN")
+console.log(newUserBTN)
 //Parallel Array Strcutures
 users = []
 
+userNames = []
+passwords = []
+
+/*
 database.ref('/users/').once('value').then((snapshot) => {
 			users = snapshot.val()
-			console.log(users)
-			
-});
+			///console.log(users)
+		
+			//This is a for each loop that will loop through a collection
+			//the same as C.hasNext()
+			//This short hand loop form just automatically goes through all elements in 
+			//the collection - it is designed to give me the key for every value as it passeses
+			//it
+			for (key in users) {
+				userNames.push(users[key]["userName"])
+				passwords.push(users[key]["password"])
 
+			}		
+
+			console.log(userNames)
+			console.log(passwords)
+});
+*/
+
+
+database.ref('/users/').on('value',(snapshot) => {
+			users = snapshot.val()
+			///console.log(users)
+		
+			//This is a for each loop that will loop through a collection
+			//the same as C.hasNext()
+			//This short hand loop form just automatically goes through all elements in 
+			//the collection - it is designed to give me the key for every value as it passeses
+			//it
+			for (key in users) {
+				userNames.push(users[key]["userName"])
+				passwords.push(users[key]["password"])
+
+			}		
+
+			console.log(userNames)
+			console.log(passwords)
+});
 
 
 login_form.addEventListener('submit', (e) => {
@@ -31,16 +69,16 @@ login_form.addEventListener('submit', (e) => {
 
 
 
-	for (i = 0; i < users.length; i = i + 1) {
+	for (key in users) {
 
-		if (users[i]["userName"] == uname) {
+		if (users[key]["userName"] == uname) {
 
-			if (users[i]["password"] == pword) {
+			if (users[key]["password"] == pword) {
 				logout_nav.style.display = "block"
 				elements_nav.style.display = "block"
 				elements_game_nav.style.display = "block"
 				login_nav.style.display = "none"
-				cuser = users[i]
+				cuser = users[key]
 			}
 			else {
 				alert("Invalid User")
@@ -55,6 +93,12 @@ login_form.addEventListener('submit', (e) => {
 
 });
 
+newUserBTN.addEventListener('click', (e) => {
+
+	newUser()
+
+
+})
 //add an event listener to logout_nav
 //In teh function swap the display of the various element
 logout_nav.addEventListener('click', (e) => {
@@ -70,8 +114,8 @@ logout_nav.addEventListener('click', (e) => {
 function newUser() {
 
   var postData = {
-    userName: "new user",
-    password: "password"
+    userName: "user5",
+    password: "pass5"
   };
 
   // Get a key for a new Post.
@@ -84,5 +128,4 @@ function newUser() {
   return firebase.database().ref().update(updates);
 }
 
-newUser()
 
