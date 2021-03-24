@@ -1,7 +1,9 @@
 def findSumDICTA(dict):
 
 	sum = 0
-
+	#for each loop - this is a short hand notation for a loop that goes 
+	#through every element in a collection sequentially. 
+	#WATCH - SO MANY SHORT HAND NOTATIONS IN PYTHON!
 	for key in dict:
 
 		if type(dict[key]) == int or type(dict[key]) == float:
@@ -22,7 +24,7 @@ def findSumDICTB(dict):
 	return sum
 
 
-dict1 = {"fasdf":"cat", "fdassafa":"dog", "fdasdasdf":1, "twrrgre":2, "faea":4}
+dict1 = {"ffdasfeasdf":"cat", "fdassafa":"dog", "fdasdasdf":1, "twrrgre":2, "faea":4}
 
 #Test 2:
 #Empty list --> 0

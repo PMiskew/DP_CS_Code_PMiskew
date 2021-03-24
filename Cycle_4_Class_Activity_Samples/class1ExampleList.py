@@ -18,10 +18,14 @@ def findSumLSTB(lst):
 	for i in range(0, len(lst), 1):
 
 		try:
-			sum = sum + lst[i]
-		except:
+			#temp = float(lst[i])
+			#sum = sum + temp
+			sum = sum + float(lst[i])
+			
+		except: 
+			#You can write whatever code you want here. 
 			sum = sum #No change - you need a line in here with the except - Is there 
-
+			#There is a reserved word pass that will skip out - but research is needed
 
 	return sum
 
@@ -31,7 +35,7 @@ def findSumLSTB(lst):
 
 #Test 1:
 #No floats, No numeric values hiding as strings --> 7
-lst1 = ["cat","dog",1,2,4]
+lst1 = ["cat","dog",1,2,4,"2"]
 
 #Test 2:
 #Empty list --> 0
